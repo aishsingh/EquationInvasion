@@ -1,0 +1,7 @@
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/obj/x86/Debug/EquationInvasion.exe
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/obj/x86/Debug/EquationInvasion.exe.mdb
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/bin/Debug/sfmlnet-audio-2.dll
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/bin/Debug/sfmlnet-graphics-2.dll
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/bin/Debug/sfmlnet-window-2.dll
+/data/Swinburne/2015-sem2/SWE20001/dest/test/EquationInvasion/bin/Debug/sfmlnet-system-2.dll
