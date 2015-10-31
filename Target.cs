@@ -61,7 +61,7 @@ namespace EquationInvasion
 			return grid;
 		}
 		
-		private static bool HasOscillatedToEdge(Target t)
+		public static bool HasOscillatedToEdge(Target t)
 		{
 			if (t.Rect.Left + (t.Rect.Width/2) < _border)
 				return true;
@@ -71,7 +71,7 @@ namespace EquationInvasion
 				return false;
 		}
 
-		private static List<Target> GetOuterTargets(List<Target> targets)
+		public static List<Target> GetOuterTargets(List<Target> targets)
 		{
 			// find outer left side
 			Target outerLeft = targets[0];
@@ -83,7 +83,7 @@ namespace EquationInvasion
 			// find outer right side
 			Target outerRight = targets[0];
 			foreach (Target t in targets) {
-				if (t.Rect.Left + t.Rect.Width > outerLeft.Rect.Left)
+				if (t.Rect.Left > outerRight.Rect.Left)
 					outerRight = t;
 			}
 
