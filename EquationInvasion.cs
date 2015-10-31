@@ -55,7 +55,7 @@ namespace EquationInvasion
 					t.Draw (_window);
 				}
 
-				// Revert direction when outer targets hit the screen edge
+				// revert target direction when outer targets hit the screen edge
 				if (_targets.Count > 0 && Target.HasOuterTargetHitScreenEdge (_targets)) {
 					if (_waveOscilatingDir == Direction.LEFT)
 						_waveOscilatingDir = Direction.RIGHT;
@@ -63,7 +63,9 @@ namespace EquationInvasion
 						_waveOscilatingDir = Direction.LEFT;
 				}
 
+				handleTargetCollision ();
 
+				// Move player
 				if (_arrowKeyDown != Direction.NONE)
 					_player.Move (_arrowKeyDown, screenRect);
 
@@ -88,6 +90,8 @@ namespace EquationInvasion
 				_arrowKeyDown = Direction.RIGHT;
 			else if (pressed.Code == Keyboard.Key.PageUp)  // This is a cheat only for testing
 				NextWave ();
+			else if (pressed.Code == Keyboard.Key.Space)
+				_player.Shoot ();
 		}
 
 		void OnKeyReleased(object sender, EventArgs e)
@@ -111,6 +115,20 @@ namespace EquationInvasion
 			_targets = Target.GenTargets (_wave * 2, _wave * 1);
 			_wave++;
 			_waveOscilatingDir = Direction.RIGHT;
+		}
+
+		private void handleTargetCollision ()
+		{
+			foreach (Target t in _targets.ToArray()) {
+				foreach (RectangleShape b in _player.bullets.ToArray()) {
+					if (Target.HasBulletHitTarget (b, t)) {
+						_targets.Remove(t);
+						_player.RemoveBullet (b);
+						break;
+					}
+				}
+			}
+
 		}
 	}
 

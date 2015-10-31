@@ -96,6 +96,15 @@ namespace EquationInvasion
 			List<Target> outer = GetOuterTargets (targets);
 			return (HasOscillatedToEdge(outer[0]) || HasOscillatedToEdge(outer[1]));
 		}
+
+		public static bool HasBulletHitTarget(RectangleShape b, Target t)
+		{
+			// check for a bounding box collision
+			return !(b.Position.X > t.Rect.Left + t.Rect.Width
+				|| b.Position.X + b.Size.X < t.Rect.Left
+				|| b.Position.Y > t.Rect.Top + t.Rect.Height
+				|| b.Position.Y + b.Size.Y < t.Rect.Top);
+		}
 	}
 }
 
