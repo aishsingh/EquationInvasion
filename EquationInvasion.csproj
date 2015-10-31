@@ -33,6 +33,10 @@
   <Import Project="packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <ItemGroup>
     <Compile Include="EquationInvasion.cs" />
+    <Compile Include="TargetTests.cs" />
+    <Compile Include="Target.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -49,6 +53,9 @@
     </Reference>
     <Reference Include="sfmlnet-system-2">
       <HintPath>packages\SFML.Net.2.2\lib\sfmlnet-system-2.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

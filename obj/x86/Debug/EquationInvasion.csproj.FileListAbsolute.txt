@@ -16,3 +16,5 @@ C:\Users\Aish\Desktop\test\git\EquationInvasion\bin\Debug\sfmlnet-window-2.dll
 C:\Users\Aish\Desktop\test\git\EquationInvasion\obj\x86\Debug\EquationInvasion.csprojResolveAssemblyReference.cache
 C:\Users\Aish\Desktop\test\git\EquationInvasion\obj\x86\Debug\EquationInvasion.exe
 C:\Users\Aish\Desktop\test\git\EquationInvasion\obj\x86\Debug\EquationInvasion.pdb
+C:\Users\Aish\Desktop\test\git\EquationInvasion\bin\Debug\nunit.framework.dll
+C:\Users\Aish\Desktop\test\git\EquationInvasion\bin\Debug\nunit.framework.xml

@@ -2,8 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="EquationInvasion.cs">
     <Files>
-      <File FileName="EquationInvasion.cs" Line="29" Column="22" />
+      <File FileName="EquationInvasion.cs" Line="66" Column="1" />
+      <File FileName="TargetTests.cs" Line="19" Column="34" />
+      <File FileName="Target.cs" Line="11" Column="36" />
+      <File FileName="Direction.cs" Line="9" Column="8" />
+      <File FileName="Player.cs" Line="27" Column="39" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="EquationInvasion" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
