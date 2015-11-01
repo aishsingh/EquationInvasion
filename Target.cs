@@ -11,7 +11,7 @@ namespace EquationInvasion
 		private static float _border = 50.0f;
 
 		public Target () : this(0, 0) {}
-		public Target (float x, float y) : this(x, y, Color.White) {}
+		public Target (float x, float y) : this(x, y, Color.Blue) {}
 		public Target (float x, float y, Color c)
 		{
 			_shape = new RectangleShape (new Vector2f (60.0f, 60.0f));

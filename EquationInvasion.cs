@@ -19,6 +19,7 @@ namespace EquationInvasion
 		private EquationTarget _eqToSolve;
 		private String _eqCurrentInput;
 		private Font _font;
+		private int _score;
 
 		public EquasionInvasion() {
 			SetupWindow();
@@ -27,11 +28,12 @@ namespace EquationInvasion
 			screenRect = new FloatRect (_window.Position.X, _window.Position.Y, _window.Size.X, _window.Size.Y);
 			_player = new Player(screenRect);
 
-			// initilise fiels
+			// initilise fields
 			_targets = new List<Target> ();
 			_isSolving = false;
 			_eqToSolve = new EquationTarget();
 			_eqCurrentInput = "";
+			_score = 0;
 
 			// loaf font
 			_font = new Font("nk57-monospace-no-bk.ttf");
@@ -62,6 +64,8 @@ namespace EquationInvasion
 				_window.DispatchEvents();
 				_window.Clear(Color.Black);
 
+				DrawScore ();
+
 				// Move player
 				if (_arrowKeyDown != Direction.NONE)
 					_player.Move (_arrowKeyDown, screenRect);
@@ -83,7 +87,6 @@ namespace EquationInvasion
 					else if (_waveOscilatingDir == Direction.RIGHT)
 						_waveOscilatingDir = Direction.LEFT;
 				}
-
 
 				if (_isSolving)
 					DrawEquationSolver ();
@@ -150,8 +153,15 @@ namespace EquationInvasion
 					_eqCurrentInput += n;
 					_eqCurrentInput = int.Parse (_eqCurrentInput).ToString ();
 				}
-				else if (input.Unicode == "-" && _eqCurrentInput.Length > 0)
-					_eqCurrentInput = (int.Parse(_eqCurrentInput) *-1).ToString();
+				else if (input.Unicode == "-") {
+					if (_eqCurrentInput == "-")
+						_eqCurrentInput = "";
+					else if (_eqCurrentInput.Length > 0)
+						_eqCurrentInput = (int.Parse (_eqCurrentInput) * -1).ToString ();
+					else
+						_eqCurrentInput = "-";
+				}
+					
 			}
 		}
 
@@ -165,8 +175,8 @@ namespace EquationInvasion
 			else
 				diff = EquationDifficulty.EASY;
 
-			_targets = Target.GenTargets (_wave * 2, _wave * 1, diff);
 			_wave++;
+			_targets = Target.GenTargets (_wave * 2, _wave * 1, diff);
 			_waveOscilatingDir = Direction.RIGHT;
 		}
 
@@ -186,6 +196,9 @@ namespace EquationInvasion
 							// only remove now if normal target
 							// equation targets get removed after being solved
 							_targets.Remove (t);
+
+							// normal target hit
+							_score += 10;
 						}
 
 						_player.RemoveBullet (b);
@@ -220,11 +233,31 @@ namespace EquationInvasion
 				// correct answer
 				// now we can destroy the target
 				_targets.Remove (_eqToSolve);
+							
+				// eq target hit
+				_score += 50;
 
 				// reset input
 				_eqCurrentInput = "";
 				_isSolving = false;
 			}
+		}
+
+		private void DrawScore()
+		{
+			Text score = new Text (_score.ToString (), _font);
+			Text wave = new Text ("Wave " + _wave.ToString(), _font);
+
+			score.Color = Color.White;
+			wave.Color = Color.White;
+			score.CharacterSize = 40;
+			wave.CharacterSize = 25;
+
+			score.Position = new Vector2f (_window.Size.X - score.GetGlobalBounds ().Width - 10, 0);
+			wave.Position = new Vector2f (10, 0);
+
+			_window.Draw (score);
+			_window.Draw (wave);
 		}
 	}
 
