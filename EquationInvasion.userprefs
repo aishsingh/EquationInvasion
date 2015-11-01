@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="EquationInvasion.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EquationInvasion.cs">
     <Files>
-      <File FileName="EquationInvasion.cs" Line="115" Column="47" />
-      <File FileName="Target.cs" Line="106" Column="31" />
+      <File FileName="EquationInvasion.cs" Line="153" Column="63" />
+      <File FileName="Target.cs" Line="10" Column="12" />
+      <File FileName="Equation.cs" Line="79" Column="30" />
       <File FileName="Direction.cs" Line="1" Column="1" />
-      <File FileName="Player.cs" Line="56" Column="10" />
+      <File FileName="Player.cs" Line="1" Column="1" />
+      <File FileName="TargetTests.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

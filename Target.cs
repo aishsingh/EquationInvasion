@@ -7,14 +7,16 @@ namespace EquationInvasion
 {
 	public class Target
 	{
-		private RectangleShape _shape;
+		protected RectangleShape _shape;
 		private static float _border = 50.0f;
 
 		public Target () : this(0, 0) {}
-		public Target (float x, float y)
+		public Target (float x, float y) : this(x, y, Color.White) {}
+		public Target (float x, float y, Color c)
 		{
 			_shape = new RectangleShape (new Vector2f (60.0f, 60.0f));
 			_shape.Position = new Vector2f (x, y);
+			_shape.FillColor = c;
 		}
 
 		public void Draw(RenderWindow window)
@@ -46,15 +48,20 @@ namespace EquationInvasion
 		/// <returns>The targets.</returns>
 		/// <param name="w">Number of horizontal targets.</param>
 		/// <param name="h">Number of vertical targets.</param>
-		public static List<Target> GenTargets(int h, int v) {
+		public static List<Target> GenTargets(int h, int v, EquationDifficulty diff) {
 			List<Target> grid = new List<Target>();
+			Random r = new Random();  // rand number generator. Needs to be here to avoid duplicates from being created as it is seeded with time
 
 			float gap = 40.0f;
 			float x = _border;
 			float y = _border;
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < v; j++) {
-					grid.Add (new Target (x + ((60+gap)*i), y + ((60+gap)*j) + gap));
+					// 2/5 chance of generating an equation
+					if (r.Next (1, 5) < 2)
+						grid.Add (new EquationTarget (x + ((60+gap)*i), y + ((60+gap)*j) + gap, diff, r));
+					else  // generate normal target with no equation
+						grid.Add (new Target (x + ((60+gap)*i), y + ((60+gap)*j) + gap));
 				}
 			}
 

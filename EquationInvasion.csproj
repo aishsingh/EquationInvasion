@@ -37,6 +37,7 @@
     <Compile Include="Target.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Equation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

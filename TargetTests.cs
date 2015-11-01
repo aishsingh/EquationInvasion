@@ -20,19 +20,19 @@ namespace EquationInvasion
 		public void TestGenTargets ()
 		{
 			// This should generate a 9 targets
-			List<Target> targets = Target.GenTargets (1, 3);
+			List<Target> targets = Target.GenTargets (1, 3, EquationDifficulty.EASY);
 			Assert.IsTrue (targets.Count == 3);
 
 			// This should generate a 24 targets
-			targets = Target.GenTargets (4, 6);
+			targets = Target.GenTargets (4, 6, EquationDifficulty.EASY);
 			Assert.IsTrue (targets.Count == 24);
 
 			// This should generate a 0 targets
-			targets = Target.GenTargets (0, 5);
+			targets = Target.GenTargets (0, 5, EquationDifficulty.EASY);
 			Assert.IsTrue (targets.Count == 0);
 
 			// This should generate  0 targets
-			targets = Target.GenTargets (5, 0);
+			targets = Target.GenTargets (5, 0, EquationDifficulty.EASY);
 			Assert.IsTrue (targets.Count == 0);
 		}
 
