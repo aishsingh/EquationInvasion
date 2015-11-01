@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="EquationInvasion.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="EquationTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TargetTests.cs">
     <Files>
-      <File FileName="EquationInvasion.cs" Line="245" Column="1" />
+      <File FileName="EquationInvasion.cs" Line="2" Column="18" />
       <File FileName="Target.cs" Line="25" Column="3" />
       <File FileName="Equation.cs" Line="1" Column="1" />
       <File FileName="EquationTests.cs" Line="18" Column="19" />
       <File FileName="Player.cs" Line="1" Column="1" />
-      <File FileName="TargetTests.cs" Line="1" Column="1" />
+      <File FileName="TargetTests.cs" Line="88" Column="38" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">

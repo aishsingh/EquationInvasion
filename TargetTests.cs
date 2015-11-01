@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using SFML.System;
 using SFML.Graphics;
 using System.Collections.Generic;
 
@@ -70,6 +71,25 @@ namespace EquationInvasion
 			Assert.IsFalse (Target.HasOscillatedToEdge(t2), "Test Middle");
 			Assert.IsTrue (Target.HasOscillatedToEdge(t3), "Test right edge");
 			Assert.IsTrue (Target.HasOscillatedToEdge(t4), "Test negative x value (off the screen)");
+		}
+
+		[Test ()]
+		public void TestTargetCollision ()
+		{
+			Target t1 = new Target (10, 20);
+			Target t2 = new Target (510, 20);
+			Target t3 = new Target (10, 510);
+			Target t4 = new Target (20, 10);
+
+			// rect represents a bullets demensions
+			RectangleShape rect = new RectangleShape(new Vector2f(10, 30));
+			rect.Position = new Vector2f (15, 25);
+
+			// check for bounding box collision
+			Assert.IsTrue(Target.HasBulletHitTarget (rect, t1));
+			Assert.IsFalse(Target.HasBulletHitTarget (rect, t2));
+			Assert.IsFalse(Target.HasBulletHitTarget (rect, t3));
+			Assert.IsTrue(Target.HasBulletHitTarget (rect, t4));
 		}
 	}
 }
