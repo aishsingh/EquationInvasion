@@ -38,6 +38,7 @@
     <Compile Include="Direction.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Equation.cs" />
+    <Compile Include="EquationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
